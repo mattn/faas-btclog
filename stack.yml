@@ -1,0 +1,9 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  btclog:
+    lang: node18
+    handler: ./btclog
+    image: mattn/faas-btclog:latest
+

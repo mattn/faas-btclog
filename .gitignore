@@ -1,0 +1,6 @@
+template
+build
+.secrets
+btclog/node_modules
+node_modules
+Makefile
