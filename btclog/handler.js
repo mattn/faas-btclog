@@ -13,7 +13,8 @@ const pool = new pg.Pool({
   }
 });
 
-module.exports = async (context, callback) => {
+module.exports = async (ev, ctx) => {
+  ctx.headerValues['content-type'] = 'application/json'
   const client = await pool.connect();
   const rows = await client.query('select * from btclog order by timestamp desc limit 120');
   return {rows: rows.rows}
